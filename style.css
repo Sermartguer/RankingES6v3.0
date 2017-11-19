@@ -1,0 +1,81 @@
+*{
+  margin: 0;
+  padding: 0;
+  font-family: sans-serif;
+}
+.menu{
+  display: flex;
+  background-color: #fff;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.16), 0 2px 10px rgba(0, 0, 0, 0.12);
+  justify-content: space-around;
+  flex-direction: row;
+}
+.items{
+  display: flex;
+  list-style-type: none;
+  
+}
+.items a button{
+  margin-left: 1em;
+  margin-right: auto;
+}
+a{
+  text-decoration: none;
+  color: #333;
+}
+.navbar-logo{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin:22px;
+}
+.item-nav{
+  display: flex;
+
+  flex-direction: column;
+  justify-content: center;
+
+}
+.nav-item{
+    padding-left: 22px;
+    padding-right: 22px;
+    margin-top: 22px;
+    padding-bottom: 22px;
+}
+
+.nav-item-menu:hover{
+  border-bottom:5px solid #333;
+  padding-bottom: 17px;
+}
+.nav-item-logout{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding-left: 22px;
+  padding-right: 22px;
+  border-radius: 5px;
+  background: tomato;
+}
+.nav-item-logout a{
+  color:white;
+}
+.welcome{
+  color:rgb(155, 155, 155);
+}
+.login-intro{
+  display: flex;
+  height: 80vh;
+  align-items: center;
+  justify-content: center;
+}
+
+.login-submit{
+  display: flex;
+  flex-direction: column;
+  align-self: center;
+}
+.lo-model{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}

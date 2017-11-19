@@ -1,0 +1,12 @@
+<h1>${TPL_STUDENT.name} ${TPL_STUDENT.surname} ${TPL_STUDENT.getTotalPoints()}</h1>
+<h3>Attitude tasks</h3>
+
+<ul class="list-group">
+ <li ng-repeat="atItem in TPL_ATTITUDE_TASKS" class="list-group-item">${atItem.task.points} -> ${atItem.task.description} ->  ${atItem.task.datetime}</li>
+</ul>
+
+<h3>Graded tasks</h3>
+<ul class="list-group">
+ ${TPL_GRADED_TASKS}
+ </ul>
+   
