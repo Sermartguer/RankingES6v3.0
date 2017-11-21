@@ -107,15 +107,16 @@ class Person {
       let saveStudent = document.getElementById('newStudent');
       document.getElementById('idFirstName').value = this.name;
       document.getElementById('idSurnames').value = this.surname;
+      let oldId = this.getId();
+      let avatar = document.getElementById('myFile');
+      avatar.addEventListener('change', () => {
+        getBase64(avatar.files[0],oldId);
+        console.log('--BASE--');
+      });
       saveStudent.addEventListener('submit', (event) => {
         let oldId = this.getId();
         this.name = document.getElementById('idFirstName').value;
         this.surname = document.getElementById('idSurnames').value;
-        let avatar = document.getElementById('myFile');
-        getBase64(avatar.files[0],oldId);
-        console.log('--BASE--');
-        debugger;
-        
         let student = new Person(this.name,this.surname,this.attitudeTasks,this.id);
         context.students.set(student.getId(),student);
         saveStudents(JSON.stringify([...context.students]));
