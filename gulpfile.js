@@ -67,4 +67,4 @@ gulp.task('webserver', function () {
 gulp.task('watch', ['browserify'], function () {
   gulp.watch('./src/client/**/*.js', ['browserify']);
 });
-gulp.task('default', ['browserify', 'webserver', 'watch']);
+gulp.task('default', ['browserify','doc', 'webserver', 'watch']);

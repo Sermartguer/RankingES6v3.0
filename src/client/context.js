@@ -19,6 +19,7 @@ class Context {
   constructor() {
     this.students = new Map();
     this.gradedTasks = new Map();
+    this.settings_final = new Map();
     this.showNumGradedTasks = 1;//Max visible graded tasks in ranking list table
     if (getCookie('user')) {
       this.user = JSON.parse(getCookie('user'));
@@ -212,17 +213,23 @@ class Context {
       let TPL_GRADED = 0;
       let TPL_SVALUE = 0;
       if (localStorage.getItem('settings')){
-        let g = parseInt(localStorage.getItem('settings'));
-        TPL_GRADED = g;
-        TPL_ATTITUDE = 100-g;
-        TPL_SVALUE = g;
+        
+        let g = JSON.parse(localStorage.getItem('settings'));
+        console.log(g);
+        TPL_GRADED = g[0][1];
+        TPL_ATTITUDE = 100-g[0][1];
+        TPL_SVALUE = g[0][1];
+        
       }
       document.getElementById('content').innerHTML = eval('`' + responseText + '`');
       let slide = document.getElementById('slider');
       slide.onchange = function() {
         TPL_GRADED = slide.value;
         TPL_ATTITUDE = 100 - slide.value;
-        saveSettings(JSON.stringify(parseInt(slide.value)));
+        //settings_final.push("settings",parseInt(slide.value));
+        
+        context.settings_final.set("settings",parseInt(slide.value));
+        saveSettings(JSON.stringify([...context.settings_final]));
         loadTemplate('templates/settings.html',callback);
     }.bind(this);
   }

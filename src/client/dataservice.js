@@ -15,9 +15,14 @@ function updateFromServer() {
                           loadGradedTasksToLocalStorage();
                           context.getTemplateRanking();
                         },'GET','',false);
+    loadTemplate('api/getSettings',function(response) {
+                        localStorage.setItem('settings',response);
+                        loadSettingsToLocalStorage();
+                        context.getTemplateRanking();
+                      },'GET','',false);
+
   }
 }
-
 function saveStudents(arrayStudents) {
   localStorage.setItem('students',arrayStudents);
   loadTemplate('api/saveStudents',function(response) {
@@ -38,6 +43,10 @@ function saveGradedTasks(arrayGT) {
 }
 function saveSettings(graded) {
   localStorage.setItem('settings',graded);
+  loadTemplate('api/saveSettings',function(response) {
+    console.log('SAVE SETTINGS ' + response);
+  },'POST', localStorage.getItem('settings'),false);
+ 
 }
 function loadStudentsToLocalStorage() {
   if (localStorage.getItem('students')) {
@@ -57,6 +66,12 @@ function loadGradedTasksToLocalStorage() {
           value_.studentsMark,value_.id));
       });
     context.gradedTasks = gradedTasks_;
+  }
+}
+function loadSettingsToLocalStorage() {
+  if (localStorage.getItem('settings')) {
+    let settings_ = new Map(JSON.parse(localStorage.getItem('settings')));
+    context.settings_final = settings_;
   }
 }
 

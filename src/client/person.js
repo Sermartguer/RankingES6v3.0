@@ -63,7 +63,7 @@ class Person {
     let grpoints = 0;
     if (localStorage.getItem('settings')){
       grpoints = context.students.get(idgrade).getGTtotalPoints();
-      let gradedweight = parseInt(localStorage.getItem('settings'));
+      let gradedweight = parseInt(context.settings_final.get("settings"));
       totalgraded = (grpoints * gradedweight)/100;
       totalattitude = (this.getTotalPoints() * (100-gradedweight)/this.getHigherAPerson());
       if(totalattitude != isNaN){

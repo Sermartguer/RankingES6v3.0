@@ -1,4 +1,13 @@
-<div>
-    Attitude Tasks: ${TPL_ATTITUDE}% - Graded Tasks ${TPL_GRADED}%
+<div class="settings-pattern">
+    <div>
+        <h3>SETTINGS AREA</h3>
+        <p>Choose your % of graded tasks and attitude tasks</p>
+    </div>
+    <br>
+    <div class="data">
+        Attitude Tasks: ${TPL_ATTITUDE}% - Graded Tasks ${TPL_GRADED}%
+    </div>
+    <br>
+    <input id="slider" class="slider-settings" type="range" min="1" max="100" value="${TPL_SVALUE}">
+    <br>
 </div>
-<input id="slider" type="range" min="1" max="100" value="${TPL_SVALUE}">

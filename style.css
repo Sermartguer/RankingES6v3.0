@@ -3,6 +3,9 @@
   padding: 0;
   font-family: sans-serif;
 }
+.container-fluid{
+  background: #f7f7f7;
+}
 .menu{
   display: flex;
   background-color: #fff;
@@ -78,4 +81,251 @@ a{
   display: flex;
   flex-direction: column;
   align-items: center;
+  background: white;
+  width: 400px;
+  
+  padding-bottom: 2em;
+}
+.lo-model h1,.addstudent-pattern h3{
+  padding: 20px 0;
+  background: #4CAF50;
+  font-weight: 300;
+  text-align: center;
+  color: #fff;
+  margin: -16px -16px 16px -16px;
+  font: 140% Arial,Helvetica,sans-serif;
+  width: 100%;
+}
+.form-row input{
+  font-family: 'Raleway', sans-serif;
+  -webkit-transition: all .30s;
+  outline: 0;
+  width: 80%;
+  background: #fff;
+  margin-bottom: 4%;
+  border: 1px solid #ccc;
+  padding: 3%;
+  color: #555;
+  font-family: Arial,Helvetica,sans-serif;
+  font-size: 14px;
+}
+.form-row{
+  text-align: center;
+  padding-top: 1em;
+}
+.login-submit button{
+  width: 100%;
+  padding: 3%;
+  background: #4CAF50;
+  border-bottom: 2px solid #4CAF50;
+  border-top-style: none;
+  border-right-style: none;
+  border-left-style: none;
+  color: #fff;
+  font-size: 14px;
+}
+
+.table-pattern{
+  display:flex;
+  justify-content: center;
+  margin-top: 2em;
+}
+.students{
+  background: white;
+  border-collapse: collapse;
+  min-width: 70%;
+}
+.students thead tr{
+  background: #333;
+  color: white;
+}
+.students thead tr a{
+  background: #333;
+  color: white;
+}
+.students thead tr th {
+  padding: 30px;
+  font-weight: normal;
+}
+.students tbody tr td{
+  padding: 22px;
+}
+.students tbody tr:nth-child(even){background-color: #f2f2f2;}
+
+.students tbody tr:hover {background-color: #ddd;}
+.btnS{
+  border:none;
+  padding-left: 22px;
+  padding-right: 22px;
+  border-radius: 4px;
+  min-height: 40px;
+}
+.btn-delete{
+  background: tomato;
+  color: white;
+}
+.btn-edit{
+  background: DodgerBlue ;
+  color: white;
+}
+.btn-more{
+  background: MediumSeaGreen ;
+  color: white;
+}
+.gradedTaskInput,.ip{
+width: 100%;
+padding: 12px 20px;
+margin: 8px 0;
+display: inline-block;
+border: 1px solid #ccc;
+border-radius: 4px;
+box-sizing: border-box;
+}
+#more_gt{
+  border:none;
+  padding-left: 22px;
+  padding-right: 22px;
+  border-radius: 4px;
+  min-height: 40px;
+}
+.settings-pattern{
+  margin-top: 3em;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background: white;
+}
+
+.settings-pattern h3{
+  padding: 20px 0;
+  background: tomato;
+  font-weight: 300;
+  text-align: center;
+  color: #fff;
+  margin: -16px -16px 16px 0px;
+  font: 140% Arial,Helvetica,sans-serif;
+  width: 100%;
+}
+.slider-settings{
+  -webkit-appearance: none;
+  appearance: none;
+  width: 25px;
+  height: 25px;
+  background: #4CAF50;
+  cursor: pointer;
+
+}
+
+.slider-settings {
+  -webkit-appearance: none;
+  width: 100%;
+  height: 25px;
+  background: #d3d3d3;
+  outline: none;
+  opacity: 0.7;
+  -webkit-transition: .2s;
+  transition: opacity .2s;
+  margin-left: 5px;
+  margin-right: 5px;
+}
+
+.slider-settings:hover {
+  opacity: 1;
+}
+
+.slider-settings::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 25px;
+  height: 25px;
+  background: #4CAF50;
+  cursor: pointer;
+}
+
+.slider-settings::-moz-range-thumb {
+  width: 25px;
+  height: 25px;
+  background: #4CAF50;
+  cursor: pointer;
+}
+.addstudent-pattern{
+  margin-top: 3em;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background: white;
+
+}
+#newStudent{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  padding: 2em;
+}
+.btn-save{
+  background: #4CAF50;
+  color: white;
+  margin-top: 20px;
+}
+#content{
+ display: flex;
+ justify-content: center;
+}
+.addtask-pattern{
+  margin-top: 3em;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background: white;
+}
+#newGradedTask{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  padding: 2em;
+}
+.addtask-pattern h3{
+  padding: 20px 0;
+  background: rgb(54, 126, 235);
+  font-weight: 300;
+  text-align: center;
+  color: #fff;
+  margin: -16px -16px 16px -16px;
+  font: 140% Arial,Helvetica,sans-serif;
+  width: 100%;
+}
+.btn-graded{
+  background: rgb(54, 126, 235);
+  color: white;
+  margin-top: 20px;
+}
+.menulogo{
+  margin:22px;
+  display: none;
+}
+@media only screen and (max-width: 925px) {
+  .menu{
+    flex-direction: column;
+  }
+  .menulogo{
+    margin:22px;
+    display:inline;
+  }
+  .items{
+    display: none;
+    flex-direction: column;
+    text-align: center;
+  }
+  .items-responsive{
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+  }
+
+}
+.logomenu{
+  display: flex;
+  justify-content: space-between;
 }

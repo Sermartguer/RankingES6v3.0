@@ -12,6 +12,7 @@ var fs = require('fs');
 //===== NEW PERE ===========================================================
 router.get('/getStudents', getStudents);
 router.get('/getGradedTasks', getGradedTasks);
+router.get('/getSettings', getSettings);
 
 router.post('/saveStudents',function(req, res) {
   if (req.isAuthenticated()) {
@@ -29,6 +30,19 @@ router.post('/saveGradedTasks',function(req, res) {
   if (req.isAuthenticated()) {
     //data.saveGradedTasks(req.body);
     fs.writeFile('src/server/data/' + req.user.id + '/gradedtasks.json', JSON.stringify(req.body), 'utf8', (err) => {
+      if (err) {
+        throw err;
+      }
+      console.log('The file has been saved!');
+    });
+      res.send('OK');
+    }
+});
+router.post('/saveSettings',function(req, res) {
+  if (req.isAuthenticated()) {
+    console.log(req.body);
+    //data.saveGradedTasks(req.body);
+    fs.writeFile('src/server/data/' + req.user.id + '/settings.json', JSON.stringify(req.body), 'utf8', (err) => {
       if (err) {
         throw err;
       }
@@ -140,6 +154,17 @@ function getGradedTasks(req, res, next) {
   //var myObj = require('./data/' + req.user.id + '/gradedtasks.json');
   //res.status(200).send(myObj);
   fs.readFile('src/server/data/' + req.user.id + '/gradedtasks.json',function(err, data) {
+         if(err) {
+            console.log(err);
+         }
+         console.log(data);
+         res.status(200).send(data);
+  });
+}
+function getSettings(req, res, next) {
+  //var myObj = require('./data/' + req.user.id + '/gradedtasks.json');
+  //res.status(200).send(myObj);
+  fs.readFile('src/server/data/' + req.user.id + '/settings.json',function(err, data) {
          if(err) {
             console.log(err);
          }
